@@ -6,6 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/', // Asegura que la base de la aplicación sea la raíz para el despliegue
   plugins: [
     vue(),
     vueDevTools(),
