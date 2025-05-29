@@ -1,0 +1,574 @@
+/* Variables para mantener consistencia */
+:root {
+  --bg-opacity: 0.8;             /* transparencia */
+  --blur-amount: 10px;          /* efecto cristal */
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --border-radius: 8px;
+  --glass-border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Reset y básicos */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Cambiado a min-height para permitir el scroll del body */
+}
+
+/* Actualizar opacidad del fondo */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/logo_gato.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  z-index: -1;
+}
+
+
+/* Style the grid container */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 1rem;
+}
+
+/* Style each grid item */
+.grid-item {
+  display: flex;
+  flex-direction: row; /* Icon and text in a row */
+  align-items: center; /* Vertically align icon and text */
+  gap: 0.5rem; /* Space between icon and text */
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+}
+
+.grid-item .icon {
+  font-size: 1.5rem;
+  color: #007bff; /* Bootstrap primary color */
+}
+
+.grid-item h3 {
+  font-size: 1.2rem;
+  margin: 0; /* Remove default margin */
+}
+
+.grid-item p {
+  font-size: 1rem;
+  margin: 0; /* Remove default margin */
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  #introduccion-js {
+    flex-direction: column; /* Stack image and text on smaller screens */
+    align-items: stretch; /* Full width items */
+  }
+
+  .introduccion-img {
+    flex: 1; /* Take full width */
+  }
+
+  .introduccion-texto {
+    padding-left: 0; /* Remove left padding */
+    margin-top: 1rem; /* Add top margin */
+  }
+}
+
+#fundamentos-js {
+    padding: 2rem;
+    background-color: rgba(8, 19, 27, 0.7);
+    backdrop-filter: blur(var(--blur-amount));
+    border-radius: var(--border-radius);
+    margin: 2rem 0;
+    color: white;
+}
+
+#fundamentos-js h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+}
+
+.fundamentos-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.fundamentos-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.fundamentos-list li {
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    border: var(--glass-border);
+}
+
+.fundamentos-list li strong {
+    color: #007acc;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.fundamentos-list code {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+.fundamentos-list kbd {
+    background-color: #333;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.9em;
+    border: 1px solid #666;
+}
+
+.conclusion {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 2rem;
+    font-size: 1.1em;
+    color: #007acc;
+}
+
+@media (max-width: 768px) {
+    #fundamentos-js {
+        padding: 1rem;
+    }
+
+    .fundamentos-list li {
+        padding: 0.8rem;
+    }
+}
+
+.fundamentos-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns of equal width */
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* Responsive adjustment */
+@media (max-width: 1024px) {
+    .fundamentos-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .fundamentos-container {
+        grid-template-columns: 1fr; /* 1 column on mobile */
+    }
+}
+
+.fundamento-item {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease;
+    backdrop-filter: blur(calc(var(--blur-amount) / 2));
+    border: var(--glass-border);
+}
+
+.fundamento-item:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.fundamento-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.fundamento-item h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.fundamento-item p {
+    color: #eee;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .fundamentos-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+i {
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
+  background-color: black;
+}
+/* Mixin para efecto cristal (aplicar a todos los componentes) */
+.navbar,
+.sidebar,
+footer {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(var(--blur-amount));
+  -webkit-backdrop-filter: blur(var(--blur-amount));
+  border: var(--glass-border);
+  box-shadow: var(--shadow);
+}
+/* El main-content ahora se maneja por separado para su transparencia */
+
+
+
+/* Contenido principal */
+.main-content {
+  flex-grow: 1; /* Permite que el contenido principal ocupe el espacio restante */
+  background-color: rgba(255, 255, 255, 0.4); /* Restaurado a semitransparente */
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  gap: 2rem;
+  transition: margin-left 0.3s ease; /* Transición para el margen izquierdo */
+}
+
+/* Estilos para hacer el main-content transparente solo en la página de inicio */
+.main-content--transparent {
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Estilos para secciones */
+.main-content section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(var(--blur-amount));
+  -webkit-backdrop-filter: blur(var(--blur-amount));
+  border: var(--glass-border);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+/* Títulos de sección */
+.main-content section h2 {
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  font-size: 1.8rem;
+  color: #1a1a2e;
+}
+
+/* Subtítulos */
+.main-content section h3 {
+  margin: 1.5rem 0 1rem 0;
+  color: #333;
+  font-size: 1.4rem;
+}
+
+/* Separación entre elementos dentro de las secciones */
+.main-content section > * {
+  margin-bottom: 1rem;
+}
+
+/* Ejemplos de código */
+.main-content section pre {
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.05);
+  border-radius: calc(var(--border-radius) - 2px);
+  border-left: 4px solid #007acc;
+}
+
+/* Hover effect en las secciones */
+.main-content section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Media queries para el sidebar y container, ahora manejados en App.vue y Sidebar.vue */
+/*
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .sidebar {
+    position: relative;
+    top: 0;
+    height: auto;
+    max-height: 200px;
+  }
+}
+*/
+
+/* Consola interactiva */
+#console-section {
+  align-items: stretch; /* Asegura que los elementos hijos se estiren a la misma altura */
+
+  width: 90%;
+  max-width: 800px;
+  position: fixed;
+  bottom: 20px; /* Ajusta la posición vertical para alinear con el botón de ocultar consola */
+  right: 160px; /* Ajusta la posición para que no se superponga con el botón de ocultar consola */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  gap: 1rem;
+  background-color: rgba(34, 34, 34, 0.85);
+  backdrop-filter: blur(var(--blur-amount));
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+  z-index: 1000;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+
+  opacity: 1;
+}
+
+#console-section.hidden {
+  transform: translateY(100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.input-column {
+  flex: 1 1 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  /* Eliminar padding-bottom y manejar el espacio con flexbox */
+  justify-content: space-between; /* Empuja el textarea hacia arriba y los botones hacia abajo */
+}
+
+
+.button-group {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end; /* Alinea los botones a la derecha */
+  margin-top: 0.5rem; /* Espacio entre el textarea y los botones */
+}
+
+#run-code, #clear-code {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#run-code {
+  background-color: #005f99;
+}
+
+#clear-code {
+  background-color: #dc3545;
+}
+
+#run-code:hover {
+  background-color: #007acc;
+}
+
+#clear-code:hover {
+  background-color: #c82333;
+}
+
+.output-column {
+  flex: 1 1 250px;
+  padding: 0.5rem;
+}
+
+#code-input,
+#console-output {
+  flex: 1;
+  min-height: 120px;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 4px;
+  font-family: 'Consolas', monospace;
+  font-size: 0.9rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #eee;
+  overflow: auto;
+  resize: none; /* Elimina el redimensionamiento del textarea */
+  cursor: default; /* Asegura que el cursor sea el predeterminado */
+}
+
+/* Botón alineado al fondo de su columna */
+#run-code {
+  align-self: flex-end;
+  padding: 0.5rem 1rem;
+  background-color: #005f99;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 0.9rem;
+}
+
+#run-code:hover {
+  background-color: #007acc;
+}
+
+/* Responsive: apila en móvil */
+@media (max-width: 700px) {
+  #console-section {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    max-width: none;
+    flex-direction: column;      /* input sobre output */
+    border-radius: 0;
+  }
+}
+
+#toggle-console {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1001;
+  padding: 8px 16px;
+  background-color: #005f99;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#toggle-console:hover {
+  background-color: #007acc;
+}
+
+footer {
+  background-color: rgba(0, 74, 124, 0.7);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Estilos generales para todos los h2 */
+
+
+/* Ajustes específicos para secciones con fondo oscuro */
+#introduccion-js h2,
+#fundamentos-js h2 {
+    color: white;
+}
+
+/* Ajuste para secciones con fondo claro */
+.main-content h2 {
+    color: #1a1a2e;
+}
+
+/* Contenedor para mantener el espaciado consistente */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 2rem;
+}
+
+button.load-code {
+    background-color: #007acc;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+/* Estilos para la nueva sección de operadores */
+.operator-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  border: var(--glass-border);
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.operator-item:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.operator-item h4 {
+  color: #007acc;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.operator-item p {
+  color: #eee;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.operator-item pre {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 0.8rem;
+  border-radius: 4px;
+  font-family: 'Consolas', monospace;
+  font-size: 0.85rem;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.operator-item button.load-code {
+  align-self: flex-start;
+}
+
+/* Estilos para el botón de Ejercicios en el Sidebar */
+.sidebar ul li a.exercise-link {
+  background-color: #ff4d4d; /* Un rojo brillante para resaltar */
+  color: white;
+  border: 2px solid #ff1a1a;
+  box-shadow: 0 0 15px rgba(255, 77, 77, 0.7);
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.sidebar ul li a.exercise-link:hover {
+  background-color: #ff1a1a;
+  box-shadow: 0 0 20px rgba(255, 26, 26, 0.9);
+  transform: scale(1.1);
+}
