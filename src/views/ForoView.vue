@@ -16,7 +16,7 @@
       </div>
       <div v-for="(comment, index) in comments" :key="index" class="comment-item">
         <p class="comment-text">{{ comment.text }}</p>
-        <img v-if="comment.image" :src="comment.image" alt="Imagen adjunta" class="comment-image">
+        <img v-if="comment.imageUrl" :src="comment.imageUrl" alt="Imagen adjunta" class="comment-image">
         <span class="comment-date">{{ comment.date }}</span>
       </div>
     </div>
