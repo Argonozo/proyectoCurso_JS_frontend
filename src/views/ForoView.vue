@@ -88,7 +88,7 @@ export default defineComponent({
         const newComment = {
           ...response.data,
           date: new Date(response.data.date).toLocaleString(),
-          imageUrl: response.data.imageUrl ? `http://localhost:3000${response.data.imageUrl}` : null
+          imageUrl: response.data.imageUrl ? `${API_BASE_URL}${response.data.imageUrl}` : null
         };
         comments.value.unshift(newComment);
 
