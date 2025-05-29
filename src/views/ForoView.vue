@@ -59,7 +59,7 @@ export default defineComponent({
         comments.value = response.data.map((comment: any) => ({
           ...comment,
           date: new Date(comment.date).toLocaleString(), // Formatear la fecha
-          imageUrl: comment.imageUrl ? `${API_BASE_URL}${comment.imageUrl}` : null // Asegurar URL completa
+          imageUrl: comment.imageUrl || null // La URL ya viene completa de Cloudinary
         }));
       } catch (error) {
         console.error('Error al obtener comentarios:', error);
@@ -88,7 +88,7 @@ export default defineComponent({
         const newComment = {
           ...response.data,
           date: new Date(response.data.date).toLocaleString(),
-          imageUrl: response.data.imageUrl ? `${API_BASE_URL}${response.data.imageUrl}` : null
+          imageUrl: response.data.imageUrl || null
         };
         comments.value.unshift(newComment);
 
