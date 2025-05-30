@@ -183,7 +183,7 @@ console.log(Object.getPrototypeOf(obj)); // Salida: { z: 3 }
 const miObjeto = { a: 1, b: 2, c: 3 };
 for (const clave in miObjeto) {
   if (miObjeto.hasOwnProperty(clave)) { // Es buena práctica usar hasOwnProperty
-    console.log(`${clave}: ${miObjeto[clave]}`);
+    console.log(`\${clave}: \${miObjeto[clave]}`);
   }
 }
 // Salida:
@@ -191,7 +191,7 @@ for (const clave in miObjeto) {
 // b: 2
 // c: 3
         </code></pre>
-        <button class="load-code" @click.stop="addCodeToConsole(`const miObjeto = { a: 1, b: 2, c: 3 };\nfor (const clave in miObjeto) {\n  if (miObjeto.hasOwnProperty(clave)) {\n    console.log(\`${clave}: ${miObjeto[clave]}\`);\n  }\n}`)">Probar</button>
+        <button class="load-code" @click.stop="addCodeToConsole(`const miObjeto = { a: 1, b: 2, c: 3 };\nfor (const clave in miObjeto) {\n  if (miObjeto.hasOwnProperty(clave)) {\n    console.log(\`\${clave}: \${miObjeto[clave]}\`);\n  }\n}`)">Probar</button>
       </div>
 
       <h3>Iteración con `Object.keys()`, `Object.values()`, `Object.entries()`</h3>
@@ -201,18 +201,18 @@ for (const clave in miObjeto) {
 const datos = { nombre: "Marta", edad: 28 };
 
 Object.keys(datos).forEach(key => {
-  console.log(`Clave: ${key}`);
+  console.log(`Clave: \${key}`);
 });
 
 Object.values(datos).forEach(value => {
-  console.log(`Valor: ${value}`);
+  console.log(`Valor: \${value}`);
 });
 
 Object.entries(datos).forEach(([key, value]) => {
-  console.log(`${key}: ${value}`);
+  console.log(`\${key}: \${value}`);
 });
         </code></pre>
-        <button class="load-code" @click.stop="addCodeToConsole(`const datos = { nombre: 'Marta', edad: 28 };\n\nObject.keys(datos).forEach(key => {\n  console.log(\`Clave: ${key}\`);\n});\n\nObject.values(datos).forEach(value => {\n  console.log(\`Valor: ${value}\`);\n});\n\nObject.entries(datos).forEach(([key, value]) => {\n  console.log(\`${key}: ${value}\`);\n});`)">Probar</button>
+        <button class="load-code" @click.stop="addCodeToConsole(`const datos = { nombre: 'Marta', edad: 28 };\n\nObject.keys(datos).forEach(key => {\n  console.log(\`Clave: \${key}\`);\n});\n\nObject.values(datos).forEach(value => {\n  console.log(\`Valor: \${value}\`);\n});\n\nObject.entries(datos).forEach(([key, value]) => {\n  console.log(\`\${key}: \${value}\`);\n});`)">Probar</button>
       </div>
 
       <h2>Desestructuración de Objetos (ES6)</h2>
@@ -268,12 +268,12 @@ const cuenta = {
   saldo: 1000,
   depositar: function(cantidad) {
     this.saldo += cantidad;
-    console.log(`Nuevo saldo: ${this.saldo}`);
+    console.log(`Nuevo saldo: \${this.saldo}`);
   }
 };
 cuenta.depositar(500); // Salida: Nuevo saldo: 1500
         </code></pre>
-        <button class="load-code" @click.stop="addCodeToConsole(`const cuenta = {\n  saldo: 1000,\n  depositar: function(cantidad) {\n    this.saldo += cantidad;\n    console.log(\`Nuevo saldo: ${this.saldo}\`);\n  }\n};\ncuenta.depositar(500);`)">Probar</button>
+        <button class="load-code" @click.stop="addCodeToConsole(`const cuenta = {\n  saldo: 1000,\n  depositar: function(cantidad) {\n    this.saldo += cantidad;\n    console.log(\`Nuevo saldo: \${this.saldo}\`);\n  }\n};\ncuenta.depositar(500);`)">Probar</button>
       </div>
 
       <h2>Propiedades Computadas (Computed Property Names - ES6)</h2>

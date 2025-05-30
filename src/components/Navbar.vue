@@ -71,6 +71,30 @@ const toggleSidebar = () => {
   object-fit: contain;
 }
 
+/* --- EFECTO AL TÍTULO DEL NAVBAR --- */
+.navbar .title {
+  font-weight: 900;
+  font-size: 2.1rem;
+  background:linear-gradient(to right,#1a1a1a,white, #004a7c, #4b3d3d,yellow);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-shadow: 0 2px 12px #0008, 0 1px 0 #fff2;
+  animation: gradient-move 4s linear infinite;
+  letter-spacing: -1px;
+}
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
 .navbar-links {
   display: flex;
   gap: 1rem;
