@@ -14,8 +14,10 @@ const addCodeToConsole = (code: string) => {
 
 <template>
   <div class="view-container">
-    <h1>Arrays</h1>
-    <p>Los arrays (arreglos) son objetos tipo lista que permiten almacenar colecciones ordenadas de elementos. Pueden contener elementos de cualquier tipo de dato.</p>
+    <div class="explication-section">
+      <h1>Arrays</h1>
+      <p>Los arrays (arreglos) son objetos tipo lista que permiten almacenar colecciones ordenadas de elementos. Pueden contener elementos de cualquier tipo de dato.</p>
+    </div>
 
     <section class="code-section">
       <h2>Conceptos Básicos</h2>

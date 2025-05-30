@@ -1,7 +1,9 @@
 <template>
   <div class="view-container">
-    <h1>JSON</h1>
-    <p>Contenido sobre JSON en JavaScript.</p>
+    <div class="explication-section">
+      <h1>JSON</h1>
+      <p>Contenido sobre JSON en JavaScript.</p>
+    </div>
     <section class="code-section">
       <!-- Contenido de la unidad de JSON se añadirá aquí -->
       <h2>📘 Unidad: JSON</h2>

@@ -122,7 +122,9 @@ const ejecutarEjercicio3 = () => {
 
 <template>
   <div class="view-container">
-    <h1>Ejercicios de JavaScript</h1>
+    <div class="explication-section">
+      <h1>Ejercicios de JavaScript</h1>
+    </div>
 
     <section class="code-section">
       <h2>¿Qué es `prompt()`?</h2>

@@ -1,7 +1,9 @@
 <template>
   <div class="view-container">
-    <h1>Programación Orientada a Objetos</h1>
-    <p>Contenido sobre Programación Orientada a Objetos en JavaScript.</p>
+    <div class="explication-section">
+      <h1>Programación Orientada a Objetos</h1>
+      <p>Contenido sobre Programación Orientada a Objetos en JavaScript.</p>
+    </div>
   </div>
 </template>
 

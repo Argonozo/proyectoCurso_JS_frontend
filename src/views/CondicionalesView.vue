@@ -14,8 +14,10 @@ const addCodeToConsole = (code: string) => {
 
 <template>
   <div class="view-container">
-    <h1>Condicionales en JavaScript</h1>
-    <p>Las estructuras condicionales permiten ejecutar diferentes bloques de código basándose en si una condición es verdadera o falsa. Son fundamentales para controlar el flujo de un programa.</p>
+    <div class="explication-section">
+      <h1>Condicionales en JavaScript</h1>
+      <p>Las estructuras condicionales permiten ejecutar diferentes bloques de código basándose en si una condición es verdadera o falsa. Son fundamentales para controlar el flujo de un programa.</p>
+    </div>
 
     <section class="code-section">
       <h2>1. Sentencia <code>if</code>, <code>else if</code> y <code>else</code></h2>

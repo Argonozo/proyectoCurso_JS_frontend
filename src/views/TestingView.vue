@@ -1,7 +1,9 @@
 <template>
   <div class="view-container">
-    <h1>Testing</h1>
-    <p>Contenido sobre testing en JavaScript (Unitarias, Integración, E2E).</p>
+    <div class="explication-section">
+      <h1>Testing</h1>
+      <p>Contenido sobre testing en JavaScript (Unitarias, Integración, E2E).</p>
+    </div>
   </div>
 </template>
 

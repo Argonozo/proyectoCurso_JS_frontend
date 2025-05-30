@@ -14,8 +14,10 @@ const addCodeToConsole = (code: string) => {
 
 <template>
   <div class="view-container">
-    <h1>Funciones</h1>
-    <p>Las funciones son bloques de código reutilizables que realizan una tarea específica. Son fundamentales para organizar y estructurar el código en JavaScript.</p>
+    <div class="explication-section">
+      <h1>Funciones en JavaScript</h1>
+      <p>Las funciones son bloques de código reutilizables que realizan una tarea específica. Permiten estructurar el código, evitar repeticiones y facilitar el mantenimiento.</p>
+    </div>
 
     <section class="code-section">
       <h2>Conceptos Básicos</h2>

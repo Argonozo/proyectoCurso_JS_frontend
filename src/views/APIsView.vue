@@ -1,7 +1,9 @@
 <template>
   <div class="view-container">
-    <h1>APIs y Fetch</h1>
-    <p>Contenido sobre consumo de APIs y Fetch en JavaScript.</p>
+    <div class="explication-section">
+      <h1>APIs y Fetch</h1>
+      <p>Contenido sobre consumo de APIs y Fetch en JavaScript.</p>
+    </div>
     <section class="code-section">
       <!-- Contenido de la unidad de APIs y Fetch se añadirá aquí -->
       <h2>📘 Unidad: APIs y Fetch</h2>

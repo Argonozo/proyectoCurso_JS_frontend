@@ -14,14 +14,15 @@ const addCodeToConsole = (code: string) => {
 
 <template>
   <div class="view-container" id="variables-section">
-    <h1>Variables en JavaScript</h1>
-    <p>
-      En JavaScript, las variables son contenedores que se utilizan para almacenar datos. Piensa en ellas como "cajas" con un nombre, donde puedes guardar diferentes tipos de información. Comprender cómo declarar y usar variables es fundamental para escribir cualquier programa en JavaScript.
-    </p>
-    <p>
-      Existen dos palabras clave principales para declarar variables: <code>let</code> y <code>const</code>.
-    </p>
-
+    <div class="explication-section">
+      <h1>Variables en JavaScript</h1>
+      <p>
+        En JavaScript, las variables son contenedores que se utilizan para almacenar datos. Piensa en ellas como "cajas" con un nombre, donde puedes guardar diferentes tipos de información. Comprender cómo declarar y usar variables es fundamental para escribir cualquier programa en JavaScript.
+      </p>
+      <p>
+        Existen dos palabras clave principales para declarar variables: <code>let</code> y <code>const</code>.
+      </p>
+    </div>
     <section class="code-section">
       <h2>📘 Unidad 1 Tipos de datos y variables</h2>
       <ul>

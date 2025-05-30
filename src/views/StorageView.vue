@@ -1,7 +1,9 @@
 <template>
   <div class="view-container">
-    <h1>Almacenamiento Local</h1>
-    <p>Contenido sobre almacenamiento local (localStorage, sessionStorage) en JavaScript.</p>
+    <div class="explication-section">
+      <h1>Almacenamiento Local</h1>
+      <p>Contenido sobre almacenamiento local (localStorage, sessionStorage) en JavaScript.</p>
+    </div>
   </div>
 </template>
 

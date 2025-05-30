@@ -1,7 +1,9 @@
 <template>
   <div class="view-container">
-    <h1>Manipulación del DOM</h1>
-    <p>Contenido sobre manipulación del DOM en JavaScript.</p>
+    <div class="explication-section">
+      <h1>Manipulación del DOM</h1>
+      <p>Contenido sobre manipulación del DOM en JavaScript.</p>
+    </div>
     <section class="code-section">
       <!-- Contenido de la unidad de Manipulación del DOM se añadirá aquí -->
       <h2>📘 Unidad: Manipulación del DOM</h2>

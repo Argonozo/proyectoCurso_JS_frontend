@@ -6,8 +6,10 @@ import NavigationButtons from '../components/NavigationButtons.vue';
 
 <template>
   <div class="view-container">
-    <h1>Bucles en JavaScript</h1>
-    <p>Los bucles son herramientas fundamentales en la programación que nos permiten ejecutar un bloque de código repetidamente. Esto es útil para automatizar tareas, procesar colecciones de datos y mucho más.</p>
+    <div class="explication-section">
+      <h1>Bucles en JavaScript</h1>
+      <p>Los bucles son herramientas fundamentales en la programación que nos permiten ejecutar un bloque de código repetidamente. Esto es útil para automatizar tareas, procesar colecciones de datos y mucho más.</p>
+    </div>
 
     <section class="code-section">
       <h2>1. Bucle <code>for</code></h2>

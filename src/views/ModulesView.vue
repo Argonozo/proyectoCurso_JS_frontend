@@ -1,7 +1,9 @@
 <template>
   <div class="view-container">
-    <h1>Módulos</h1>
-    <p>Contenido sobre módulos en JavaScript (ESM, CommonJS).</p>
+    <div class="explication-section">
+      <h1>Módulos</h1>
+      <p>Contenido sobre módulos en JavaScript (ESM, CommonJS).</p>
+    </div>
   </div>
 </template>
 

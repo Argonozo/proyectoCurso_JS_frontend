@@ -1,7 +1,9 @@
 <template>
   <div class="view-container">
-    <h1>Características ES6+</h1>
-    <p>Contenido sobre características modernas de JavaScript (ES6+).</p>
+    <div class="explication-section">
+      <h1>Características ES6+</h1>
+      <p>Contenido sobre características modernas de JavaScript (ES6+).</p>
+    </div>
     <section class="code-section">
       <!-- Contenido de la unidad de Características ES6+ se añadirá aquí -->
       <h2>📘 Unidad: Características ES6+</h2>

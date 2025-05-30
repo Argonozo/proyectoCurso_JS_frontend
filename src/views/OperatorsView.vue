@@ -14,13 +14,10 @@ const loadCodeInConsole = (code: string) => {
 
 <template>
   <div class="view-container">
-    <h1>Operadores en JavaScript</h1>
-    <p>
-      Los <strong>operadores</strong> en JavaScript son símbolos o palabras clave que nos permiten realizar diversas operaciones sobre uno o más valores (llamados operandos). Son esenciales para manipular datos, realizar cálculos, comparar expresiones y controlar el flujo de un programa.
-    </p>
-    <p>
-      Comprender los diferentes tipos de operadores y cómo funcionan es fundamental para escribir lógica de programación efectiva y eficiente. A continuación, exploraremos las categorías principales de operadores en JavaScript.
-    </p>
+    <div class="explication-section">
+      <h1>Operadores en JavaScript</h1>
+      <p>Los operadores en JavaScript son símbolos o palabras clave que nos permiten realizar diversas operaciones sobre uno o más valores (llamados operandos). Son esenciales para manipular datos, realizar cálculos, comparar expresiones y controlar el flujo de un programa. Comprender los diferentes tipos de operadores y cómo funcionan es fundamental para escribir lógica de programación efectiva y eficiente. A continuación, exploraremos las categorías principales de operadores en JavaScript.</p>
+    </div>
 
     <section class="code-section">
       <h2>🧮 1. Operadores Aritméticos</h2>

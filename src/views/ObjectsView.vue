@@ -14,8 +14,10 @@ const addCodeToConsole = (code: string) => {
 
 <template>
   <div class="view-container">
-    <h1>Objetos</h1>
-    <p>Los objetos en JavaScript son colecciones de propiedades, donde cada propiedad tiene un nombre (clave) y un valor. Son fundamentales para representar entidades complejas y datos estructurados.</p>
+    <div class="explication-section">
+      <h1>Objetos</h1>
+      <p>Los objetos en JavaScript son colecciones de propiedades, donde cada propiedad tiene un nombre (clave) y un valor. Son fundamentales para representar entidades complejas y datos estructurados.</p>
+    </div>
 
     <h2>Conceptos Básicos</h2>
     <h3>Creación de Objetos</h3>
