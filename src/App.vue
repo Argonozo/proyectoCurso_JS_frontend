@@ -6,7 +6,7 @@ import Console from './components/Console.vue';
 import Footer from './components/Footer.vue';
 
 // Lógica de Vue aquí (Composition API)
-import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
+import { ref, onMounted, onBeforeUnmount, computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
 // Estado para controlar si la consola de código es visible.
@@ -16,9 +16,21 @@ const isConsoleVisible = ref(false);
 // Estado para controlar si el sidebar está expandido o contraído.
 const isSidebarExpanded = ref(false); // true = expandido, false = contraído
 
+// Nuevo estado para detectar si el ratón está cerca del borde izquierdo
+const isMouseNearLeftEdge = ref(false);
+const activationZoneWidth = 30; // Ancho en píxeles de la zona de activación
+
+// Nuevo estado para rastrear cómo se abrió el sidebar
+const sidebarOpenedBy = ref<'hover' | 'button' | null>(null);
+
 // Función para alternar la visibilidad del sidebar.
 const toggleSidebar = () => {
   isSidebarExpanded.value = !isSidebarExpanded.value;
+  if (isSidebarExpanded.value) {
+    sidebarOpenedBy.value = 'button';
+  } else {
+    sidebarOpenedBy.value = null;
+  }
 };
 
 // Calcula el margen izquierdo del contenido principal basado en el estado del sidebar.
@@ -41,10 +53,6 @@ const toggleConsole = () => {
   isConsoleVisible.value = !isConsoleVisible.value;
 };
 
-// Lógica para el botón 'Empezar Ahora' (se moverá a HeroSection)
-// La navegación ahora se manejará con Vue Router
-
-
 // Función para cargar código en consola, llamada desde los componentes de las unidades
 // Función para cargar un fragmento de código en la consola.
 
@@ -58,14 +66,38 @@ const loadCodeIntoConsole = (code: string) => {
   }
 };
 
+const handleMouseMove = (event: MouseEvent) => {
+  // Solo activar si no estamos en una pantalla pequeña (ej. móvil)
+  if (window.innerWidth > 768) {
+    const sidebarElement = sidebarRef.value?.$el as HTMLElement;
+    const isOverSidebar = sidebarElement && event.clientX < sidebarElement.offsetWidth && event.clientX > 0;
+
+    if (event.clientX < activationZoneWidth) {
+      isMouseNearLeftEdge.value = true;
+      if (!isSidebarExpanded.value) {
+        isSidebarExpanded.value = true;
+      }
+    } else if (!isOverSidebar) {
+      isMouseNearLeftEdge.value = false;
+      // Solo contraer si fue expandido por hover y el ratón ya no está sobre el sidebar
+      if (isSidebarExpanded.value && sidebarOpenedBy.value === 'hover') {
+        isSidebarExpanded.value = false;
+        sidebarOpenedBy.value = null;
+      }
+    }
+  }
+};
+
 onMounted(() => {
   document.addEventListener('click', handleClickOutside);
   document.addEventListener('scroll', handleScroll);
+  document.addEventListener('mousemove', handleMouseMove); // Añadir listener para mousemove
 });
 
 onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside);
   document.removeEventListener('scroll', handleScroll);
+  document.removeEventListener('mousemove', handleMouseMove); // Limpiar listener
 });
 
 const handleClickOutside = (event: MouseEvent) => {
@@ -80,20 +112,32 @@ const handleClickOutside = (event: MouseEvent) => {
 
   // Lógica para el sidebar
   const sidebarElement = sidebarRef.value?.$el as HTMLElement;
-  const toggleSidebarButton = document.getElementById('toggle-sidebar-button'); // Asumiendo que hay un botón para el sidebar en Navbar
+  const toggleSidebarButton = document.getElementById('toggle-sidebar-button');
 
+  // Si el sidebar está expandido y el clic no fue dentro del sidebar ni en el botón de hamburguesa,
+  // contraer el sidebar.
   if (isSidebarExpanded.value && sidebarElement && !sidebarElement.contains(event.target as Node) &&
       (!toggleSidebarButton || !toggleSidebarButton.contains(event.target as Node))) {
     isSidebarExpanded.value = false;
+    sidebarOpenedBy.value = null; // Resetear el estado de apertura
   }
 };
 
 const handleScroll = (event: Event) => {
   const sidebarElement = sidebarRef.value?.$el as HTMLElement;
+  // Si el sidebar está expandido y el scroll no es dentro del sidebar,
+  // contraer el sidebar.
   if (isSidebarExpanded.value && sidebarElement && !sidebarElement.contains(event.target as Node)) {
     isSidebarExpanded.value = false;
+    sidebarOpenedBy.value = null; // Resetear el estado de apertura
   }
 };
+
+// Observar cambios en isSidebarExpanded para asegurar que el margen se actualice
+watch(isSidebarExpanded, (newValue) => {
+  // No es necesario hacer nada aquí directamente, ya que mainContentMarginLeft es un computed property
+  // que reacciona automáticamente a los cambios de isSidebarExpanded.
+});
 
 </script>
 
