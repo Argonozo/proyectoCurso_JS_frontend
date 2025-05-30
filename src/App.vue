@@ -16,21 +16,9 @@ const isConsoleVisible = ref(false);
 // Estado para controlar si el sidebar está expandido o contraído.
 const isSidebarExpanded = ref(false); // true = expandido, false = contraído
 
-// Nuevo estado para detectar si el ratón está cerca del borde izquierdo
-const isMouseNearLeftEdge = ref(false);
-const activationZoneWidth = 30; // Ancho en píxeles de la zona de activación
-
-// Nuevo estado para rastrear cómo se abrió el sidebar
-const sidebarOpenedBy = ref<'hover' | 'button' | null>(null);
-
 // Función para alternar la visibilidad del sidebar.
 const toggleSidebar = () => {
   isSidebarExpanded.value = !isSidebarExpanded.value;
-  if (isSidebarExpanded.value) {
-    sidebarOpenedBy.value = 'button';
-  } else {
-    sidebarOpenedBy.value = null;
-  }
 };
 
 // Calcula el margen izquierdo del contenido principal basado en el estado del sidebar.
@@ -66,38 +54,14 @@ const loadCodeIntoConsole = (code: string) => {
   }
 };
 
-const handleMouseMove = (event: MouseEvent) => {
-  // Solo activar si no estamos en una pantalla pequeña (ej. móvil)
-  if (window.innerWidth > 768) {
-    const sidebarElement = sidebarRef.value?.$el as HTMLElement;
-    const isOverSidebar = sidebarElement && event.clientX < sidebarElement.offsetWidth && event.clientX > 0;
-
-    if (event.clientX < activationZoneWidth) {
-      isMouseNearLeftEdge.value = true;
-      if (!isSidebarExpanded.value) {
-        isSidebarExpanded.value = true;
-      }
-    } else if (!isOverSidebar) {
-      isMouseNearLeftEdge.value = false;
-      // Solo contraer si fue expandido por hover y el ratón ya no está sobre el sidebar
-      if (isSidebarExpanded.value && sidebarOpenedBy.value === 'hover') {
-        isSidebarExpanded.value = false;
-        sidebarOpenedBy.value = null;
-      }
-    }
-  }
-};
-
 onMounted(() => {
   document.addEventListener('click', handleClickOutside);
   document.addEventListener('scroll', handleScroll);
-  document.addEventListener('mousemove', handleMouseMove); // Añadir listener para mousemove
 });
 
 onBeforeUnmount(() => {
   document.removeEventListener('click', handleClickOutside);
   document.removeEventListener('scroll', handleScroll);
-  document.removeEventListener('mousemove', handleMouseMove); // Limpiar listener
 });
 
 const handleClickOutside = (event: MouseEvent) => {
@@ -119,7 +83,6 @@ const handleClickOutside = (event: MouseEvent) => {
   if (isSidebarExpanded.value && sidebarElement && !sidebarElement.contains(event.target as Node) &&
       (!toggleSidebarButton || !toggleSidebarButton.contains(event.target as Node))) {
     isSidebarExpanded.value = false;
-    sidebarOpenedBy.value = null; // Resetear el estado de apertura
   }
 };
 
@@ -129,7 +92,6 @@ const handleScroll = (event: Event) => {
   // contraer el sidebar.
   if (isSidebarExpanded.value && sidebarElement && !sidebarElement.contains(event.target as Node)) {
     isSidebarExpanded.value = false;
-    sidebarOpenedBy.value = null; // Resetear el estado de apertura
   }
 };
 

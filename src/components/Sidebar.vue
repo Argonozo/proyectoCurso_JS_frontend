@@ -181,7 +181,6 @@ const navigateTo = (routeName: string) => {
 
 .sidebar ul li:hover {
   background-color: rgba(255, 255, 255, 0.15);
-  transform: translateX(0); /* No mover en hover si está colapsado */
 }
 
 .sidebar ul li a {
