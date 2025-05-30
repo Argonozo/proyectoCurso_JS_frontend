@@ -1,5 +1,5 @@
 <template>
-  <div class="dom">
+  <div class="view-container">
     <h1>Manipulación del DOM</h1>
     <p>Contenido sobre manipulación del DOM en JavaScript.</p>
   </div>
@@ -10,7 +10,4 @@
 </script>
 
 <style scoped>
-.dom {
-  padding: 20px;
-}
 </style>

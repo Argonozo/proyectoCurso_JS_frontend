@@ -32,7 +32,7 @@ if (condicion) {
   // Código a ejecutar si ninguna de las condiciones anteriores es verdadera
 }
         </code></pre>
-        <button class="load-code" @click="addCodeToConsole(`// Ejemplo de sintaxis básica, no ejecutable directamente sin definir 'condicion' y 'otraCondicion'.`)">Probar Sintaxis</button>
+        <button class="load-code" @click.stop="addCodeToConsole(`// Ejemplo de sintaxis básica, no ejecutable directamente sin definir 'condicion' y 'otraCondicion'.`)">Probar Sintaxis</button>
       </div>
 
       <h3>Ejemplo:</h3>
@@ -51,7 +51,7 @@ if (edad < 12) {
 }
 // Salida: "Eres un adulto."
         </code></pre>
-        <button class="load-code" @click="addCodeToConsole(`let edad = 18;\n\nif (edad < 12) {\n  console.log('Eres un niño.');\n} else if (edad < 18) {\n  console.log('Eres un adolescente.');\n} else if (edad < 65) {\n  console.log('Eres un adulto.');\n} else {\n  console.log('Eres un adulto mayor.');\n}`)">Probar</button>
+        <button class="load-code" @click.stop="addCodeToConsole(`let edad = 18;\n\nif (edad < 12) {\n  console.log('Eres un niño.');\n} else if (edad < 18) {\n  console.log('Eres un adolescente.');\n} else if (edad < 65) {\n  console.log('Eres un adulto.');\n} else {\n  console.log('Eres un adulto mayor.');\n}`)">Probar</button>
       </div>
     </section>
 
@@ -73,7 +73,7 @@ switch (expresion) {
     // Código a ejecutar si la expresion no coincide con ningún caso
 }
         </code></pre>
-        <button class="load-code" @click="addCodeToConsole(`// Ejemplo de sintaxis básica, no ejecutable directamente sin definir 'expresion'.`)">Probar Sintaxis</button>
+        <button class="load-code" @click.stop="addCodeToConsole(`// Ejemplo de sintaxis básica, no ejecutable directamente sin definir 'expresion'.`)">Probar Sintaxis</button>
       </div>
 
       <h3>Ejemplo:</h3>
@@ -99,7 +99,7 @@ switch (dia) {
 console.log(mensaje);
 // Salida: "Hoy es el primer día de la semana."
         </code></pre>
-        <button class="load-code" @click="addCodeToConsole(`let dia = 'Lunes';\nlet mensaje;\n\nswitch (dia) {\n  case 'Lunes':\n    mensaje = 'Hoy es el primer día de la semana.';\n    break;\n  case 'Viernes':\n    mensaje = '¡Casi fin de semana!';\n    break;\n  case 'Sábado':\n  case 'Domingo':\n    mensaje = 'Es fin de semana.';\n    break;\n  default:\n    mensaje = 'Es un día de la semana normal.';\n}\nconsole.log(mensaje);`)">Probar</button>
+        <button class="load-code" @click.stop="addCodeToConsole(`let dia = 'Lunes';\nlet mensaje;\n\nswitch (dia) {\n  case 'Lunes':\n    mensaje = 'Hoy es el primer día de la semana.';\n    break;\n  case 'Viernes':\n    mensaje = '¡Casi fin de semana!';\n    break;\n  case 'Sábado':\n  case 'Domingo':\n    mensaje = 'Es fin de semana.';\n    break;\n  default:\n    mensaje = 'Es un día de la semana normal.';\n}\nconsole.log(mensaje);`)">Probar</button>
       </div>
       <p>Es importante usar <code>break</code> para salir del bloque <code>switch</code> una vez que se encuentra una coincidencia. Si se omite, la ejecución continuará en el siguiente <code>case</code>.</p>
     </section>
@@ -113,7 +113,7 @@ console.log(mensaje);
         <pre v-pre><code>
 condicion ? expresionSiVerdadero : expresionSiFalso;
         </code></pre>
-        <button class="load-code" @click="addCodeToConsole(`// Ejemplo de sintaxis básica, no ejecutable directamente sin definir 'condicion'.`)">Probar Sintaxis</button>
+        <button class="load-code" @click.stop="addCodeToConsole(`// Ejemplo de sintaxis básica, no ejecutable directamente sin definir 'condicion'.`)">Probar Sintaxis</button>
       </div>
 
       <h3>Ejemplo:</h3>
@@ -129,7 +129,7 @@ let acceso = tienePermiso ? "Acceso concedido" : "Acceso denegado";
 console.log(acceso);
 // Salida: "Acceso concedido"
         </code></pre>
-        <button class="load-code" @click="addCodeToConsole(`let edad = 18;\nlet esMayorDeEdad = (edad >= 18) ? 'Sí' : 'No';\nconsole.log('¿Es mayor de edad? ' + esMayorDeEdad);\n\nlet tienePermiso = true;\nlet acceso = tienePermiso ? 'Acceso concedido' : 'Acceso denegado';\nconsole.log(acceso);`)">Probar</button>
+        <button class="load-code" @click.stop="addCodeToConsole(`let edad = 18;\nlet esMayorDeEdad = (edad >= 18) ? 'Sí' : 'No';\nconsole.log('¿Es mayor de edad? ' + esMayorDeEdad);\n\nlet tienePermiso = true;\nlet acceso = tienePermiso ? 'Acceso concedido' : 'Acceso denegado';\nconsole.log(acceso);`)">Probar</button>
       </div>
       <p>Es ideal para asignaciones condicionales o para devolver un valor basado en una condición simple.</p>
     </section>
@@ -138,106 +138,4 @@ console.log(acceso);
 </template>
 
 <style scoped>
-.view-container {
-  padding: 20px;
-  font-family: 'Arial', sans-serif;
-  color: #333;
-}
-
-h1 {
-  color: #2c3e50;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-h2 {
-  color: #34495e;
-  margin-top: 40px;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 10px;
-}
-
-h3 {
-  color: #34495e;
-  margin-top: 20px;
-}
-
-p {
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-.code-section {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 30px;
-}
-
-pre {
-  background-color: #eef;
-  border: 1px solid #ccd;
-  border-left: 5px solid #4CAF50;
-  padding: 15px;
-  border-radius: 5px;
-  overflow-x: auto;
-  margin-top: 15px;
-}
-
-code {
-  font-family: 'Consolas', 'Monaco', monospace;
-  color: #007bff;
-}
-
-pre code {
-  color: #333;
-}
-
-/* Estilos para el componente Console si es necesario */
-.console-output {
-  background-color: #222;
-  color: #0f0;
-  padding: 10px;
-  border-radius: 5px;
-  margin-top: 20px;
-  white-space: pre-wrap;
-}
-
-.data-type-item, .example, .exercise {
-  background-color: #fff;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-}
-
-.data-type-item h4, .example h4, .exercise h4 {
-  color: #007bff;
-  margin-bottom: 10px;
-}
-
-.data-type-item pre, .example pre, .exercise pre {
-  background-color: #f4f4f4;
-  border-left: 3px solid #007bff;
-  padding: 10px;
-  border-radius: 4px;
-  overflow-x: auto;
-}
-
-.data-type-item button, .example button, .exercise button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 10px;
-}
-
-.data-type-item button:hover, .example button:hover, .exercise button:hover {
-  background-color: #0056b3;
-}
 </style>

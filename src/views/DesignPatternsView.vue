@@ -1,5 +1,5 @@
 <template>
-  <div class="design-patterns">
+  <div class="view-container">
     <h1>Patrones de Diseño</h1>
     <p>Contenido sobre patrones de diseño en JavaScript.</p>
   </div>
@@ -10,7 +10,4 @@
 </script>
 
 <style scoped>
-.design-patterns {
-  padding: 20px;
-}
 </style>

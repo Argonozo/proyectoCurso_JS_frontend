@@ -1,5 +1,5 @@
 <template>
-  <div class="testing">
+  <div class="view-container">
     <h1>Testing</h1>
     <p>Contenido sobre testing en JavaScript (Unitarias, Integración, E2E).</p>
   </div>
@@ -10,7 +10,4 @@
 </script>
 
 <style scoped>
-.testing {
-  padding: 20px;
-}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="regex">
+  <div class="view-container">
     <h1>Expresiones Regulares</h1>
     <p>Contenido sobre expresiones regulares en JavaScript.</p>
   </div>
@@ -10,7 +10,4 @@
 </script>
 
 <style scoped>
-.regex {
-  padding: 20px;
-}
 </style>

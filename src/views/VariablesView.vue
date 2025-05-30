@@ -36,45 +36,45 @@ const addCodeToConsole = (code: string) => {
           <h4>String (Cadena de Texto)</h4>
           <p>Representa secuencias de caracteres. Se usan comillas simples o dobles.</p>
           <pre v-pre><code>let saludo = "Hola Mundo";</code></pre>
-          <button class="load-code" @click="addCodeToConsole(`let saludo = 'Hola Mundo';\nconsole.log(saludo);`)">Probar</button>
+          <button class="load-code" @click.stop="addCodeToConsole(`let saludo = 'Hola Mundo';\nconsole.log(saludo);`)">Probar</button>
         </div>
         <div class="data-type-item">
           <h4>Number (Número)</h4>
           <p>Representa números enteros y de punto flotante.</p>
           <pre v-pre><code>let edad = 30;
 let precio = 99.99;</code></pre>
-          <button class="load-code" @click="addCodeToConsole(`let edad = 30;\nlet precio = 99.99;\nconsole.log('Edad:', edad, 'Precio:', precio);`)">Probar</button>
+          <button class="load-code" @click.stop="addCodeToConsole(`let edad = 30;\nlet precio = 99.99;\nconsole.log('Edad:', edad, 'Precio:', precio);`)">Probar</button>
         </div>
         <div class="data-type-item">
           <h4>Boolean (Booleano)</h4>
           <p>Representa un valor lógico: <code>true</code> o <code>false</code>.</p>
           <pre v-pre><code>let esActivo = true;
 let esMayor = false;</code></pre>
-          <button class="load-code" @click="addCodeToConsole(`let esActivo = true;\nlet esMayor = false;\nconsole.log('Activo:', esActivo, 'Mayor:', esMayor);`)">Probar</button>
+          <button class="load-code" @click.stop="addCodeToConsole(`let esActivo = true;\nlet esMayor = false;\nconsole.log('Activo:', esActivo, 'Mayor:', esMayor);`)">Probar</button>
         </div>
         <div class="data-type-item">
           <h4>Array (Arreglo)</h4>
           <p>Una lista ordenada de valores.</p>
           <pre v-pre><code>let frutas = ["manzana", "banana"];</code></pre>
-          <button class="load-code" @click="addCodeToConsole(`let frutas = ['manzana', 'banana'];\nconsole.log(frutas);`)">Probar</button>
+          <button class="load-code" @click.stop="addCodeToConsole(`let frutas = ['manzana', 'banana'];\nconsole.log(frutas);`)">Probar</button>
         </div>
         <div class="data-type-item">
           <h4>Object (Objeto)</h4>
           <p>Una colección de propiedades, donde cada propiedad tiene un nombre y un valor.</p>
           <pre v-pre><code>let persona = { nombre: "Ana", edad: 25 };</code></pre>
-          <button class="load-code" @click="addCodeToConsole(`let persona = { nombre: 'Ana', edad: 25 };\nconsole.log(persona);`)">Probar</button>
+          <button class="load-code" @click.stop="addCodeToConsole(`let persona = { nombre: 'Ana', edad: 25 };\nconsole.log(persona);`)">Probar</button>
         </div>
         <div class="data-type-item">
           <h4>undefined</h4>
           <p>Indica que una variable ha sido declarada pero aún no se le ha asignado un valor.</p>
           <pre v-pre><code>let sinValor;</code></pre>
-          <button class="load-code" @click="addCodeToConsole(`let sinValor;\nconsole.log(sinValor);`)">Probar</button>
+          <button class="load-code" @click.stop="addCodeToConsole(`let sinValor;\nconsole.log(sinValor);`)">Probar</button>
         </div>
         <div class="data-type-item">
           <h4>null</h4>
           <p>Representa la ausencia intencional de cualquier valor de objeto. Es un valor asignado.</p>
           <pre v-pre><code>let vacio = null;</code></pre>
-          <button class="load-code" @click="addCodeToConsole(`let vacio = null;\nconsole.log(vacio);`)">Probar</button>
+          <button class="load-code" @click.stop="addCodeToConsole(`let vacio = null;\nconsole.log(vacio);`)">Probar</button>
         </div>
       </div>
     </section>
@@ -92,7 +92,7 @@ console.log("Contador inicial:", contador); // Salida: Contador inicial: 0
 contador = 10; // Se puede reasignar
 console.log("Contador reasignado:", contador); // Salida: Contador reasignado: 10
         </code></pre>
-        <button class="load-code" @click="addCodeToConsole(`let contador = 0;\nconsole.log('Contador inicial:', contador);\n\ncontador = 10;\nconsole.log('Contador reasignado:', contador);`)">Probar let</button>
+        <button class="load-code" @click.stop="addCodeToConsole(`let contador = 0;\nconsole.log('Contador inicial:', contador);\n\ncontador = 10;\nconsole.log('Contador reasignado:', contador);`)">Probar let</button>
       </div>
 
       <div class="example">
@@ -104,7 +104,7 @@ console.log("Nombre:", nombre); // Salida: Nombre: Alice
 // Intentar reasignar una constante causará un error:
 // nombre = "Bob"; // TypeError: Assignment to constant variable.
         </code></pre>
-        <button class="load-code" @click="addCodeToConsole(`const nombre = 'Alice';\nconsole.log('Nombre:', nombre);\n\n// Intentar reasignar una constante causará un error:\n// nombre = 'Bob'; // TypeError: Assignment to constant variable.`)">Probar const</button>
+        <button class="load-code" @click.stop="addCodeToConsole(`const nombre = 'Alice';\nconsole.log('Nombre:', nombre);\n\n// Intentar reasignar una constante causará un error:\n// nombre = 'Bob'; // TypeError: Assignment to constant variable.`)">Probar const</button>
       </div>
 
       <div class="example">
@@ -118,7 +118,7 @@ console.log("Población:", poblacion);
         </code></pre>
         <!-- Botón para cargar el código de ejemplo en la consola interactiva. -->
         <!-- Al hacer clic, llama a 'addCodeToConsole' con el código específico de este ejemplo. -->
-        <button class="load-code" @click="addCodeToConsole(`let ciudad    = 'Santiago';
+        <button class="load-code" @click.stop="addCodeToConsole(`let ciudad    = 'Santiago';
 let poblacion = 7000000;
 
 console.log('Ciudad:', ciudad);
@@ -138,7 +138,7 @@ let vacio = null;
 console.log("sinValor:", sinValor);
 console.log("vacio:", vacio);
         </code></pre>
-        <button class="load-code" @click="addCodeToConsole(`let sinValor;\nlet vacio = null;\n\nconsole.log('sinValor:', sinValor);\nconsole.log('vacio:', vacio);`)">Probar Ejercicio 1</button>
+        <button class="load-code" @click.stop="addCodeToConsole(`let sinValor;\nlet vacio = null;\n\nconsole.log('sinValor:', sinValor);\nconsole.log('vacio:', vacio);`)">Probar Ejercicio 1</button>
       </div>
     </section>
     <NavigationButtons />
@@ -147,70 +147,7 @@ console.log("vacio:", vacio);
 
 <style scoped>
 .view-container {
-  padding: 20px;
-  font-family: 'Arial', sans-serif;
-  color: #333;
   scroll-margin-top: 70px; /* Ajusta esto si tu barra de navegación tiene una altura diferente */
-}
-
-h1 {
-  color: #2c3e50;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-h2 {
-  color: #34495e;
-  margin-top: 40px;
-  border-bottom: 2px solid #eee;
-  padding-bottom: 10px;
-}
-
-h3 {
-  color: #34495e;
-  margin-top: 20px;
-}
-
-p {
-  line-height: 1.6;
-  margin-bottom: 15px;
-}
-
-.code-section {
-  background-color: #f9f9f9;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 30px;
-}
-
-pre {
-  background-color: #eef;
-  border: 1px solid #ccd;
-  border-left: 5px solid #4CAF50;
-  padding: 15px;
-  border-radius: 5px;
-  overflow-x: auto;
-  margin-top: 15px;
-}
-
-code {
-  font-family: 'Consolas', 'Monaco', monospace;
-  color: #007bff;
-}
-
-pre code {
-  color: #333;
-}
-
-/* Estilos para el componente Console si es necesario */
-.console-output {
-  background-color: #222;
-  color: #0f0;
-  padding: 10px;
-  border-radius: 5px;
-  margin-top: 20px;
-  white-space: pre-wrap;
 }
 /* Los estilos de las secciones de contenido ya están en src/assets/styles.css,
    pero si hay estilos específicos que solo aplican aquí, se pueden añadir. */

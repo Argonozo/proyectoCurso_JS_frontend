@@ -1,5 +1,5 @@
 <template>
-  <div class="async">
+  <div class="view-container">
     <h1>Asincronía</h1>
     <p>Contenido sobre asincronía en JavaScript (Callbacks, Promises, Async/Await).</p>
   </div>
@@ -10,7 +10,4 @@
 </script>
 
 <style scoped>
-.async {
-  padding: 20px;
-}
 </style>

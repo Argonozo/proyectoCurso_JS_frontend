@@ -1,5 +1,5 @@
 <template>
-  <div class="json-view">
+  <div class="view-container">
     <h1>JSON</h1>
     <p>Contenido sobre JSON en JavaScript.</p>
   </div>
@@ -10,7 +10,4 @@
 </script>
 
 <style scoped>
-.json-view {
-  padding: 20px;
-}
 </style>

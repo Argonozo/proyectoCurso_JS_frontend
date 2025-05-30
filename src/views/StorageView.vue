@@ -1,5 +1,5 @@
 <template>
-  <div class="storage">
+  <div class="view-container">
     <h1>Almacenamiento Local</h1>
     <p>Contenido sobre almacenamiento local (localStorage, sessionStorage) en JavaScript.</p>
   </div>
@@ -10,7 +10,4 @@
 </script>
 
 <style scoped>
-.storage {
-  padding: 20px;
-}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="foro-container">
+  <div class="view-container">
     <h1>Foro de Discusión</h1>
 
     <div class="post-form">
@@ -121,23 +121,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.foro-container {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  font-family: 'Arial', sans-serif;
-  color: #333;
-}
-
-h1, h2 {
-  color: #2c3e50;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
 .post-form {
   background-color: #fff;
   padding: 20px;

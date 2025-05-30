@@ -1,5 +1,5 @@
 <template>
-  <div class="events">
+  <div class="view-container">
     <h1>Eventos</h1>
     <p>Contenido sobre eventos en JavaScript.</p>
   </div>
@@ -10,7 +10,4 @@
 </script>
 
 <style scoped>
-.events {
-  padding: 20px;
-}
 </style>

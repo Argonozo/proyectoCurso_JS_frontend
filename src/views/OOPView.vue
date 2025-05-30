@@ -1,5 +1,5 @@
 <template>
-  <div class="oop">
+  <div class="view-container">
     <h1>Programación Orientada a Objetos</h1>
     <p>Contenido sobre Programación Orientada a Objetos en JavaScript.</p>
   </div>
@@ -10,7 +10,4 @@
 </script>
 
 <style scoped>
-.oop {
-  padding: 20px;
-}
 </style>

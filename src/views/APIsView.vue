@@ -1,5 +1,5 @@
 <template>
-  <div class="apis">
+  <div class="view-container">
     <h1>APIs y Fetch</h1>
     <p>Contenido sobre consumo de APIs y Fetch en JavaScript.</p>
   </div>
@@ -10,7 +10,4 @@
 </script>
 
 <style scoped>
-.apis {
-  padding: 20px;
-}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="modules">
+  <div class="view-container">
     <h1>Módulos</h1>
     <p>Contenido sobre módulos en JavaScript (ESM, CommonJS).</p>
   </div>
@@ -10,7 +10,4 @@
 </script>
 
 <style scoped>
-.modules {
-  padding: 20px;
-}
 </style>
