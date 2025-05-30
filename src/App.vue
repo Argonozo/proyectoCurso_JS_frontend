@@ -130,6 +130,7 @@ watch(isSidebarExpanded, (newValue) => {
 
 /* Estilos para el layout principal si no están en styles.css */
 .container {
+   /* Asegura que el contenedor principal ocupe todo el alto disponible */
   display: flex; /* Usar flexbox en lugar de grid para el layout principal */
   gap: 20px;
   padding: 20px;

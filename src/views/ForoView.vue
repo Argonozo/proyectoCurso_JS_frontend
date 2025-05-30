@@ -1,25 +1,26 @@
 <template>
   <div class="view-container">
     <h1>Foro de Discusión</h1>
-
-    <div class="post-form">
-      <h2>Publicar un nuevo comentario</h2>
-      <textarea v-model="newCommentText" placeholder="Escribe tu comentario aquí..." rows="4"></textarea>
-      <input type="file" @change="handleImageUpload" accept="image/*">
-      <button @click="addComment">Publicar</button>
-    </div>
-
-    <div class="comments-list">
-      <h2>Comentarios</h2>
-      <div v-if="comments.length === 0" class="no-comments">
-        No hay comentarios aún. ¡Sé el primero en publicar!
+    <section class="code-section">
+      <div class="post-form">
+        <h2>Publicar un nuevo comentario</h2>
+        <textarea v-model="newCommentText" placeholder="Escribe tu comentario aquí..." rows="4"></textarea>
+        <input type="file" @change="handleImageUpload" accept="image/*">
+        <button @click="addComment">Publicar</button>
       </div>
-      <div v-for="(comment, index) in comments" :key="index" class="comment-item">
-        <p class="comment-text">{{ comment.text }}</p>
-        <img v-if="comment.imageUrl" :src="comment.imageUrl" alt="Imagen adjunta" class="comment-image">
-        <span class="comment-date">{{ comment.date }}</span>
+
+      <div class="comments-list">
+        <h2>Comentarios</h2>
+        <div v-if="comments.length === 0" class="no-comments">
+          No hay comentarios aún. ¡Sé el primero en publicar!
+        </div>
+        <div v-for="(comment, index) in comments" :key="index" class="comment-item">
+          <p class="comment-text">{{ comment.text }}</p>
+          <img v-if="comment.imageUrl" :src="comment.imageUrl" alt="Imagen adjunta" class="comment-image">
+          <span class="comment-date">{{ comment.date }}</span>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 

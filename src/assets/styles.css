@@ -246,12 +246,18 @@ footer {
 
 /* Contenido principal */
 .main-content {
-  flex-grow: 1; /* Permite que el contenido principal ocupe el espacio restante */
-  background-color: rgba(255, 255, 255, 0.4); /* Restaurado a semitransparente */
+
+  width: 100%;
+  margin:  auto;
+ 
+  
+  background-color: green; /* Restaurado a semitransparente */
   border-radius: var(--border-radius);
   padding: 2rem;
   gap: 2rem;
-  transition: margin-left 0.3s ease; /* Transición para el margen izquierdo */
+  
+  transition: margin-left 0.3s ease;
+   /* Transición para el margen izquierdo */
 }
 
 /* Estilos para hacer el main-content transparente solo en la página de inicio */
@@ -267,7 +273,7 @@ footer {
 .main-content section {
   margin-bottom: 3rem;
   padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: white;
   border-radius: var(--border-radius);
   backdrop-filter: blur(var(--blur-amount));
   -webkit-backdrop-filter: blur(var(--blur-amount));
@@ -301,9 +307,10 @@ footer {
 .main-content section pre {
   margin: 1.5rem 0;
   padding: 1.5rem;
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: #282c34; /* Dark background */
   border-radius: calc(var(--border-radius) - 2px);
-  border-left: 4px solid #007acc;
+  border-left: 4px solid #61dafb; /* Light blue border */
+  color: #f8f8f2; /* Light text color for contrast */
 }
 
 /* Hover effect en las secciones */

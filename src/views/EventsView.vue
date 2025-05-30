@@ -2,6 +2,11 @@
   <div class="view-container">
     <h1>Eventos</h1>
     <p>Contenido sobre eventos en JavaScript.</p>
+    <section class="code-section">
+      <!-- Contenido de la unidad de Eventos se añadirá aquí -->
+      <h2>📘 Unidad: Eventos</h2>
+      <p>Aquí se explicarán los conceptos y ejemplos de cómo manejar eventos en JavaScript.</p>
+    </section>
   </div>
 </template>
 
