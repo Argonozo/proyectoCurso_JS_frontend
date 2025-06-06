@@ -396,6 +396,50 @@ background-image: url("https://www.transparenttextures.com/patterns/clean-gray-p
 
 
 /* Media queries para el sidebar y container, ahora manejados en App.vue y Sidebar.vue */
+
+      .responsive-grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        padding: 1rem; /* Or remove if padding is always on the parent section */
+      }
+
+      @media (max-width: 1024px) {
+        .responsive-grid-container {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .responsive-grid-container {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .card-grid-item {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+        border-radius: var(--border-radius);
+        border: var(--glass-border);
+        backdrop-filter: blur(calc(var(--blur-amount) / 2));
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .card-grid-item:hover {
+        transform: translateY(-5px);
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+
+      .icon-title-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
 /*
 @media (max-width: 768px) {
   .container {

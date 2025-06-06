@@ -41,43 +41,43 @@
         </p>
       </div>
 
-      <div class="grid-container">
-        <div class="grid-item">
+      <div class="responsive-grid-container">
+        <div class="card-grid-item">
           <div class="icon-title-wrapper">
             <span class="icon">⚙️</span>
             <h3>Manipulación del DOM</h3>
           </div>
           <p>Añadir, quitar o cambiar elementos HTML y CSS dinámicamente.</p>
         </div>
-        <div class="grid-item">
+        <div class="card-grid-item">
           <div class="icon-title-wrapper">
             <span class="icon">⚡</span>
             <h3>Interactividad</h3>
           </div>
           <p>Responder a acciones del usuario como clics, formularios y movimientos del ratón.</p>
         </div>
-        <div class="grid-item">
+        <div class="card-grid-item">
           <div class="icon-title-wrapper">
             <span class="icon">📡</span>
             <h3>Comunicación con Servidores</h3>
           </div>
           <p>Realizar peticiones AJAX/fetch para cargar datos sin recargar la página.</p>
         </div>
-        <div class="grid-item">
+        <div class="card-grid-item">
           <div class="icon-title-wrapper">
             <span class="icon">✨</span>
             <h3>Efectos y Animaciones</h3>
           </div>
           <p>Crear efectos visuales y animaciones que mejoran la experiencia del usuario.</p>
         </div>
-        <div class="grid-item">
+        <div class="card-grid-item">
           <div class="icon-title-wrapper">
             <span class="icon">🚀</span>
             <h3>Desarrollo de Aplicaciones</h3>
           </div>
           <p>Construir aplicaciones web completas (SPAs) con frameworks como Vue, React o Angular.</p>
         </div>
-        <div class="grid-item">
+        <div class="card-grid-item">
           <div class="icon-title-wrapper">
             <span class="icon">📱</span>
             <h3>Desarrollo Backend y Móvil</h3>
@@ -163,55 +163,17 @@
   }
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual ancho */
-    gap: 2rem;
-    padding: 1rem;
-}
-
-/* Ajustes responsivos para el grid-container */
-@media (max-width: 1024px) {
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
-    }
-}
-
-@media (max-width: 768px) {
-    .grid-container {
-        grid-template-columns: 1fr; /* 1 columna en móviles */
-    }
-}
-
-.grid-item {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 2rem;
-    border-radius: var(--border-radius);
-    transition: transform 0.3s ease;
-    backdrop-filter: blur(calc(var(--blur-amount) / 2));
-    border: var(--glass-border);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.grid-item:hover {
-    transform: translateY(-5px);
-    background-color: rgba(255, 255, 255, 0.15);
-}
-
-.icon-title-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem; /* Espacio entre el icono y el título */
-    margin-bottom: 1rem; /* Espacio debajo del icono y título */
-}
-
-.grid-item h3 {
+/* Specific styles for h3 inside card-grid-item within this component */
+.card-grid-item h3 {
     color: #ADD8E6; /* Color más claro para el título */
     font-size: 1.5rem;
     font-weight: bold; /* Hacer el texto más negrita */
     margin-top: 0; /* Eliminar el margen superior para que esté en línea con el icono */
+    text-align: center; /* Ensure text is centered as per original grid-item */
+}
+
+/* Paragraphs within card-grid-item in this section might need centering if that was the previous visual */
+.card-grid-item p {
+    text-align: center; /* Assuming paragraphs also need to be centered */
 }
 </style>
