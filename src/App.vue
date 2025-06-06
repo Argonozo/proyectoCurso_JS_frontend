@@ -6,7 +6,7 @@ import Console from './components/Console.vue';
 import Footer from './components/Footer.vue';
 
 // Lógica de Vue aquí (Composition API)
-import { ref, onMounted, onBeforeUnmount, computed, watch } from 'vue';
+import { ref, onMounted, onUnmounted, computed, watch } from 'vue';
 import { useRoute } from 'vue-router';
 
 // Estado para controlar si la consola de código es visible.
@@ -16,19 +16,30 @@ const isConsoleVisible = ref(false);
 // Estado para controlar si el sidebar está expandido o contraído.
 const isSidebarExpanded = ref(false); // true = expandido, false = contraído
 
+// Estado para detectar si la vista es móvil
+const isMobile = ref(window.innerWidth <= 768);
+
+// Función para manejar el cambio de tamaño de la ventana
+const handleResize = () => {
+  isMobile.value = window.innerWidth <= 768;
+};
+
 // Función para alternar la visibilidad del sidebar.
 const toggleSidebar = () => {
   isSidebarExpanded.value = !isSidebarExpanded.value;
 };
 
-// Calcula el margen izquierdo del contenido principal basado en el estado del sidebar.
+// Calcula el margen izquierdo del contenido principal basado en el estado del sidebar y si es vista móvil.
 const route = useRoute();
 
 const isHomePage = computed(() => route.name === 'home');
 
-const mainContentMarginLeft = computed(() =>
-  isSidebarExpanded.value ? '220px' : '0px'
-);
+const mainContentMarginLeft = computed(() => {
+  if (isMobile.value) {
+    return '0px';
+  }
+  return isSidebarExpanded.value ? '220px' : '0px';
+});
 
 // Referencia al componente 'Console' para poder llamar a sus métodos internos,
 // como 'loadCode', desde el componente padre 'App.vue'.
@@ -55,11 +66,13 @@ const loadCodeIntoConsole = (code: string) => {
 };
 
 onMounted(() => {
+  window.addEventListener('resize', handleResize);
   document.addEventListener('click', handleClickOutside);
   document.addEventListener('scroll', handleScroll);
 });
 
-onBeforeUnmount(() => {
+onUnmounted(() => {
+  window.removeEventListener('resize', handleResize);
   document.removeEventListener('click', handleClickOutside);
   document.removeEventListener('scroll', handleScroll);
 });

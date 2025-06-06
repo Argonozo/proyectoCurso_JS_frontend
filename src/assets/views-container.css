@@ -37,34 +37,11 @@ p {
   margin-bottom: 30px;
 }
 
-pre {
-  background-color: #eef;
-  border: 1px solid #ccd;
-  border-left: 5px solid #4CAF50;
-  padding: 15px;
-  border-radius: 5px;
-  overflow-x: auto;
-  margin-top: 15px;
-}
-
-code {
-  font-family: 'Consolas', 'Monaco', monospace;
-  color: #007bff;
-}
-
 pre code {
   color: #333;
 }
 
 /* Estilos para el componente Console si es necesario */
-.console-output {
-  background-color: #222;
-  color: #0f0;
-  padding: 10px;
-  border-radius: 5px;
-  margin-top: 20px;
-  white-space: pre-wrap;
-}
 
 .data-type-item, .example, .exercise {
   background-color: #fff;
@@ -134,46 +111,4 @@ pre code {
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 10px;
-}
-
-.explication-section {
-  background: linear-gradient(90deg, #f8fafc 60%, #e0e7ff 100%);
-  border-radius: 18px;
-  box-shadow: 0 4px 24px 0 rgba(60, 72, 88, 0.10);
-  padding: 32px 28px 24px 28px;
-  margin-bottom: 32px;
-  margin-top: 12px;
-  transition: box-shadow 0.3s;
-  border: 1.5px solid #e0e7ff;
-}
-
-.explication-section:hover {
-  box-shadow: 0 8px 32px 0 rgba(60, 72, 88, 0.18);
-}
-
-.explication-section h1 {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: #2d3a4a;
-  margin-bottom: 12px;
-  letter-spacing: -1px;
-}
-
-.explication-section p {
-  font-size: 1.15rem;
-  color: #4b5563;
-  margin-bottom: 8px;
-  line-height: 1.7;
-}
-
-@media (max-width: 600px) {
-  .explication-section {
-    padding: 18px 8px 14px 8px;
-  }
-  .explication-section h1 {
-    font-size: 1.3rem;
-  }
-  .explication-section p {
-    font-size: 1rem;
-  }
 }

@@ -8,11 +8,6 @@
 }
 
 /* Reset y básicos */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
 body {
   position: relative;
@@ -218,13 +213,6 @@ body::before {
     line-height: 1.6;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .fundamentos-container {
-        grid-template-columns: 1fr;
-    }
-}
-
 i {
   font-size: 1.5rem;
   color: rgb(255, 255, 255);
@@ -343,7 +331,7 @@ background-image: url("https://www.transparenttextures.com/patterns/clean-gray-p
   font-weight: 600;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .explication-section {
     padding: 18px 8px 14px 8px;
     max-width: 98vw;
@@ -413,147 +401,7 @@ background-image: url("https://www.transparenttextures.com/patterns/clean-gray-p
 }
 */
 
-/* Consola interactiva */
-#console-section {
-  align-items: stretch; /* Asegura que los elementos hijos se estiren a la misma altura */
-
-  width: 90%;
-  max-width: 800px;
-  position: fixed;
-  bottom: 20px; /* Ajusta la posición vertical para alinear con el botón de ocultar consola */
-  right: 160px; /* Ajusta la posición para que no se superponga con el botón de ocultar consola */
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  gap: 1rem;
-  background-color: rgba(34, 34, 34, 0.85);
-  backdrop-filter: blur(var(--blur-amount));
-  border-radius: var(--border-radius);
-  box-shadow: var(--shadow);
-  padding: 1rem;
-  z-index: 1000;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-
-  opacity: 1;
-}
-
-#console-section.hidden {
-  transform: translateY(100%);
-  opacity: 0;
-  pointer-events: none;
-}
-
-.input-column {
-  flex: 1 1 250px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  /* Eliminar padding-bottom y manejar el espacio con flexbox */
-  justify-content: space-between; /* Empuja el textarea hacia arriba y los botones hacia abajo */
-}
-
-
-.button-group {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: flex-end; /* Alinea los botones a la derecha */
-  margin-top: 0.5rem; /* Espacio entre el textarea y los botones */
-}
-
-#run-code, #clear-code {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 4px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-#run-code {
-  background-color: #005f99;
-}
-
-#clear-code {
-  background-color: #dc3545;
-}
-
-#run-code:hover {
-  background-color: #007acc;
-}
-
-#clear-code:hover {
-  background-color: #c82333;
-}
-
-.output-column {
-  flex: 1 1 250px;
-  padding: 0.5rem;
-}
-
-#code-input,
-#console-output {
-  flex: 1;
-  min-height: 120px;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 4px;
-  font-family: 'Consolas', monospace;
-  font-size: 0.9rem;
-  background-color: rgba(0, 0, 0, 0.3);
-  color: #eee;
-  overflow: auto;
-  resize: none; /* Elimina el redimensionamiento del textarea */
-  cursor: default; /* Asegura que el cursor sea el predeterminado */
-}
-
-/* Botón alineado al fondo de su columna */
-#run-code {
-  align-self: flex-end;
-  padding: 0.5rem 1rem;
-  background-color: #005f99;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background 0.2s;
-  font-size: 0.9rem;
-}
-
-#run-code:hover {
-  background-color: #007acc;
-}
-
-/* Responsive: apila en móvil */
-@media (max-width: 700px) {
-  #console-section {
-    bottom: 0;
-    right: 0;
-    width: 100%;
-    max-width: none;
-    flex-direction: column;      /* input sobre output */
-    border-radius: 0;
-  }
-}
-
-#toggle-console {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1001;
-  padding: 8px 16px;
-  background-color: #005f99;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#toggle-console:hover {
-  background-color: #007acc;
-}
+/* Consola interactiva y estilos relacionados movidos a Console.vue */
 
 footer {
   background-color: rgba(0, 74, 124, 0.7);
@@ -580,13 +428,14 @@ footer {
 }
 
 /* Contenedor para mantener el espaciado consistente */
+/*
 section {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 2rem;
 }
-
+*/
 button.load-code {
     background-color: #007acc;
     color: white;

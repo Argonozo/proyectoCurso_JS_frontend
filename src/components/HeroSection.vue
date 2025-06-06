@@ -73,36 +73,27 @@ const handleStartClick = () => {
   background-color: #f0f0f0;
 }
 
-/* Style the grid container */
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
-  gap: 1rem;
+@media (max-width: 768px) {
+  #hero {
+    padding: 3rem 1rem; /* Slightly reduced vertical padding */
+  }
+  #hero h1 {
+    font-size: 2rem; /* Reduced font size */
+  }
+  #hero p {
+    font-size: 1.1rem; /* Reduced font size */
+  }
 }
 
-/* Style each grid item */
-.grid-item {
-  display: flex;
-  flex-direction: row; /* Icon and text in a row */
-  align-items: center; /* Vertically align icon and text */
-  gap: 0.5rem; /* Space between icon and text */
-  padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: var(--border-radius);
-}
-
-.grid-item .icon {
-  font-size: 1.5rem;
-  color: #007bff; /* Bootstrap primary color */
-}
-
-.grid-item h3 {
-  font-size: 1.2rem;
-  margin: 0; /* Remove default margin */
-}
-
-.grid-item p {
-  font-size: 1rem;
-  margin: 0; /* Remove default margin */
+@media (max-width: 480px) {
+  #hero {
+    padding: 2rem 1rem; /* Further reduced vertical padding */
+  }
+  #hero h1 {
+    font-size: 1.75rem; /* Further reduced font size */
+  }
+  #hero p {
+    font-size: 1rem; /* Further reduced font size */
+  }
 }
 </style>
