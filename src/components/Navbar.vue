@@ -19,20 +19,24 @@ const toggleSidebar = () => {
   <header class="navbar">
     
     <div class="logo">
-      <button id="toggle-sidebar-button" @click="toggleSidebar" class="hamburger-menu">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <button id="toggle-sidebar-button" @click="toggleSidebar" class="hamburger-menu"
+              aria-label="Toggle navigation menu"
+              aria-expanded="false"
+              aria-controls="sidebar">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true">
           <line x1="3" y1="12" x2="21" y2="12"></line>
           <line x1="3" y1="6" x2="21" y2="6"></line>
           <line x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
       </button>
-      <img src="/img/gatpñoh.gif" alt="Nucleo CM @marca registrada" />
+      <img src="/img/gatpñoh.gif" alt="Nucleo CM logo" />
     </div>
 
     <h1 class="title">Casi todo sobre Javascript</h1>
 
     <div class="navbar-links">
-      <a href="#" @click.prevent="navigateToHome">Inicio</a>
+      <a href="#" @click.prevent="navigateToHome" role="button">Inicio</a>
       <router-link to="/foro" class="nav-link">Foro</router-link>
       
 

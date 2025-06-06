@@ -24,6 +24,9 @@ import { useRouter, useRoute } from 'vue-router';
 const router = useRouter();
 const route = useRoute();
 
+// Defines the order of navigation for the course sections.
+// IMPORTANT: This array MUST be kept in sync with the named routes
+// defined in src/router/index.ts and reflect the desired sequential order.
 const courseRoutes = [
   'variables',
   'operadores',
@@ -48,10 +51,12 @@ const courseRoutes = [
   'patrones-diseno',
 ];
 
+// Computes the index of the current route in the courseRoutes array.
 const currentIndex = computed(() => {
   return courseRoutes.indexOf(route.name as string);
 });
 
+// Determines the name of the previous route in the sequence, if one exists.
 const previousRoute = computed(() => {
   if (currentIndex.value > 0) {
     return courseRoutes[currentIndex.value - 1];
@@ -59,6 +64,7 @@ const previousRoute = computed(() => {
   return null;
 });
 
+// Determines the name of the next route in the sequence, if one exists.
 const nextRoute = computed(() => {
   if (currentIndex.value < courseRoutes.length - 1) {
     return courseRoutes[currentIndex.value + 1];

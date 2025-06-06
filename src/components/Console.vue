@@ -81,12 +81,13 @@ defineExpose({ loadCode }); // Esto es si se usa un ref en el padre para llamar 
 </script>
 
 <template>
-  <section id="console-section" :class="{ hidden: !isVisible }" ref="consoleSectionRef">
+  <section id="console-section" :class="{ hidden: !isVisible }" ref="consoleSectionRef" :aria-hidden="!isVisible">
     <div class="input-column">
       <textarea
         id="code-input"
         placeholder="Escribe tu código aquí..."
         v-model="codeInput"
+        aria-label="Code Input Area"
       ></textarea>
       <div class="button-group">
         <button id="clear-code" @click="clearConsole">Limpiar</button>
@@ -94,7 +95,7 @@ defineExpose({ loadCode }); // Esto es si se usa un ref en el padre para llamar 
       </div>
     </div>
     <div class="output-column">
-      <pre id="console-output">{{ consoleOutput }}</pre>
+      <pre id="console-output" aria-label="Console Output" aria-live="polite">{{ consoleOutput }}</pre>
     </div>
   </section>
 </template>

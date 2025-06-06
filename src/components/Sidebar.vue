@@ -20,110 +20,110 @@ const navigateTo = (routeName: string) => {
 </script>
 
 <template>
-  <nav class="sidebar" :class="{ 'collapsed': !props.isExpanded }">
+  <nav id="sidebar" class="sidebar" :class="{ 'collapsed': !props.isExpanded }">
     <ul>
       <li>
-        <a href="#" @click.prevent="navigateTo('variables')">
+        <a href="#" @click.prevent="navigateTo('variables')" role="button">
           <span v-if="props.isExpanded">Tipos de datos y variables</span>
         </a>
       </li>
       <li>
-        <a href="#" @click.prevent="navigateTo('operadores')">
+        <a href="#" @click.prevent="navigateTo('operadores')" role="button">
           <span v-if="props.isExpanded">Operadores</span>
         </a>
       </li>
       <li>
-        <a href="#" @click.prevent="navigateTo('condicionales')">
+        <a href="#" @click.prevent="navigateTo('condicionales')" role="button">
           <span v-if="props.isExpanded">Condicionales</span>
         </a>
       </li>
       <li>
-        <a href="#" @click.prevent="navigateTo('ejercicios')" class="exercise-link">
+        <a href="#" @click.prevent="navigateTo('ejercicios')" class="exercise-link" role="button">
           <span v-if="props.isExpanded">Ejercicios</span>
         </a>
       </li>
       <li>
-        <a href="#" @click.prevent="navigateTo('bucles')">
+        <a href="#" @click.prevent="navigateTo('bucles')" role="button">
           <span v-if="props.isExpanded">Bucles</span>
         </a>
       </li>
       <li>
-        <a href="#" @click.prevent="navigateTo('funciones')">
+        <a href="#" @click.prevent="navigateTo('funciones')" role="button">
           <span v-if="props.isExpanded">Funciones</span>
         </a>
       </li>
       <li>
-        <a href="#" @click.prevent="navigateTo('arrays')">
+        <a href="#" @click.prevent="navigateTo('arrays')" role="button">
           <span v-if="props.isExpanded">Arrays</span>
         </a>
       </li>
       <li>
-        <a href="#" @click.prevent="navigateTo('objetos')">
+        <a href="#" @click.prevent="navigateTo('objetos')" role="button">
           <span v-if="props.isExpanded">Objetos</span>
         </a>
       </li>
       <li>
-        <a href="#" @click.prevent="navigateTo('oop')">
+        <a href="#" @click.prevent="navigateTo('oop')" role="button">
           <span v-if="props.isExpanded">Programación Orientada a Objetos</span>
         </a>
       </li>
       <li>
-        <a href="#" @click.prevent="navigateTo('dom')">
+        <a href="#" @click.prevent="navigateTo('dom')" role="button">
           <span v-if="props.isExpanded">Manipulación del DOM</span>
         </a>
       </li>
       <li>
-        <a href="#" @click.prevent="navigateTo('eventos')">
+        <a href="#" @click.prevent="navigateTo('eventos')" role="button">
           <span v-if="props.isExpanded">Eventos</span>
         </a>
       </li>
       <li>
-        <a href="#" @click.prevent="navigateTo('asincronia')">
+        <a href="#" @click.prevent="navigateTo('asincronia')" role="button">
           <span v-if="props.isExpanded">Asincronía</span>
         </a>
       </li>
       <li>
-        <a href="#" @click.prevent="navigateTo('modulos')">
+        <a href="#" @click.prevent="navigateTo('modulos')" role="button">
           <span v-if="props.isExpanded">Módulos</span>
         </a>
       </li>
       <li>
-        <a href="#" @click.prevent="navigateTo('es6-features')">
+        <a href="#" @click.prevent="navigateTo('es6-features')" role="button">
           <span v-if="props.isExpanded">Características ES6+</span>
         </a>
       </li>
       <li>
-        <a href="#" @click.prevent="navigateTo('manejo-errores')">
+        <a href="#" @click.prevent="navigateTo('manejo-errores')" role="button">
           <span v-if="props.isExpanded">Manejo de Errores</span>
         </a>
       </li>
       <li>
-        <a href="#" @click.prevent="navigateTo('json')">
+        <a href="#" @click.prevent="navigateTo('json')" role="button">
           <span v-if="props.isExpanded">JSON</span>
         </a>
       </li>
       <li>
-        <a href="#" @click.prevent="navigateTo('apis')">
+        <a href="#" @click.prevent="navigateTo('apis')" role="button">
           <span v-if="props.isExpanded">APIs y Fetch</span>
         </a>
       </li>
       <li>
-        <a href="#" @click.prevent="navigateTo('almacenamiento-local')">
+        <a href="#" @click.prevent="navigateTo('almacenamiento-local')" role="button">
           <span v-if="props.isExpanded">Almacenamiento Local</span>
         </a>
       </li>
       <li>
-        <a href="#" @click.prevent="navigateTo('regex')">
+        <a href="#" @click.prevent="navigateTo('regex')" role="button">
           <span v-if="props.isExpanded">Expresiones Regulares</span>
         </a>
       </li>
       <li>
-        <a href="#" @click.prevent="navigateTo('testing')">
+        <a href="#" @click.prevent="navigateTo('testing')" role="button">
           <span v-if="props.isExpanded">Testing</span>
         </a>
       </li>
       <li>
-        <a href="#" @click.prevent="navigateTo('patrones-diseno')">
+        <a href="#" @click.prevent="navigateTo('patrones-diseno')" role="button">
           <span v-if="props.isExpanded">Patrones de Diseño</span>
         </a>
       </li>
