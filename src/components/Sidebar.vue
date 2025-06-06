@@ -206,11 +206,13 @@ const navigateTo = (routeName: string) => {
     width: 100%; /* Ocupa todo el ancho en móvil */
     border-radius: var(--border-radius); /* Restaurar bordes redondeados */
     padding: 1rem;
+    display: block; /* Explicit display type */
   }
 
   .sidebar.collapsed {
-    width: 100%; /* En móvil, el colapsado no cambia el ancho */
-    padding: 1rem;
+    width: 100%; /* En móvil, el colapsado no cambia el ancho, pero se oculta */
+    /* padding: 1rem; */ /* Irrelevant due to display: none */
+    display: none; /* Ocultar cuando está colapsado en móvil */
   }
 
   .sidebar ul li {

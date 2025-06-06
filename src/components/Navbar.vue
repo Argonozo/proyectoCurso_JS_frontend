@@ -133,6 +133,14 @@ const toggleSidebar = () => {
 }
 
 /* Media queries para responsividad */
+/* Tablet Styles */
+@media (max-width: 1023px) and (min-width: 769px) {
+  .navbar .title {
+    font-size: 1.8rem;
+  }
+}
+
+/* Mobile Styles */
 @media (max-width: 768px) {
   .navbar {
     padding: 0.5rem;
@@ -140,6 +148,17 @@ const toggleSidebar = () => {
 
   .navbar .logo {
     height: 56px; /* Altura más pequeña en móviles */
+  }
+
+  .navbar .title {
+    font-size: 1.5rem; /* Reduced font size */
+    /* Consider adjusting letter-spacing if needed */
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar .title {
+    font-size: 1.2rem; /* Further Reduced font size */
   }
 }
 </style>

@@ -213,7 +213,7 @@ defineExpose({ loadCode }); // Esto es si se usa un ref en el padre para llamar 
 }
 
 /* Responsive: apila en móvil */
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   #console-section {
     bottom: 0;
     right: 0;
@@ -221,24 +221,7 @@ defineExpose({ loadCode }); // Esto es si se usa un ref en el padre para llamar 
     max-width: none;
     flex-direction: column;      /* input sobre output */
     border-radius: 0;
+    padding: 1rem 1rem 60px 1rem; /* Added bottom padding */
   }
-}
-
-#toggle-console {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1001;
-  padding: 8px 16px;
-  background-color: #005f99;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#toggle-console:hover {
-  background-color: #007acc;
 }
 </style>
