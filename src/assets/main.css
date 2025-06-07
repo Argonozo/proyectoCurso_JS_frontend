@@ -4,21 +4,34 @@
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 3rem; /* Increased padding for more generous whitespace */
   font-weight: normal;
 }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-heading);
+  color: var(--color-heading);
+  margin-bottom: 0.75em; /* Basic spacing, can be adjusted per component */
+}
+
+h1 { font-size: 2.5rem; font-weight: 900; }
+h2 { font-size: 2rem; font-weight: 700; }
+h3 { font-size: 1.75rem; font-weight: 700; }
+h4 { font-size: 1.5rem; font-weight: 700; }
+h5 { font-size: 1.25rem; font-weight: 400; }
+h6 { font-size: 1rem; font-weight: 400; }
 
 a,
 .green {
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
+  color: var(--evolved-clarity-primary); /* Use new primary color */
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
   padding: 3px;
 }
 
 @media (hover: hover) {
   a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+    background-color: var(--evolved-clarity-accent-amber, #FFB300)33; /* Use accent color with alpha, 33 for ~20% opacity */
   }
 }
 
@@ -29,9 +42,9 @@ a,
   }
 
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+    /* display: grid; Removed to allow Navbar/Footer to span width naturally */
+    /* grid-template-columns: 1fr 1fr; Removed */
+    padding: 0 3rem; /* Increased padding for more generous whitespace, kept */
   }
 
   .view-container {

@@ -20,7 +20,13 @@ const navigateTo = (routeName: string) => {
 </script>
 
 <template>
-  <nav class="sidebar" :class="{ 'collapsed': !props.isExpanded }">
+  <nav
+    id="sidebar-nav"
+    class="sidebar"
+    :class="{ 'collapsed': !props.isExpanded }"
+    role="navigation"
+    aria-label="Main navigation"
+  >
     <ul>
       <li>
         <a href="#" @click.prevent="navigateTo('variables')">

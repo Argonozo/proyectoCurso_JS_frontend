@@ -81,7 +81,13 @@ defineExpose({ loadCode }); // Esto es si se usa un ref en el padre para llamar 
 </script>
 
 <template>
-  <section id="console-section" :class="{ hidden: !isVisible }" ref="consoleSectionRef">
+  <section
+    id="console-region"
+    :class="{ hidden: !isVisible }"
+    ref="consoleSectionRef"
+    role="region"
+    aria-label="Code Console"
+  >
     <div class="input-column">
       <textarea
         id="code-input"
