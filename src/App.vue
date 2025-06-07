@@ -117,7 +117,7 @@ watch(isSidebarExpanded, (newValue) => {
 </script>
 
 <template>
-  <Navbar @toggle-sidebar="toggleSidebar" />
+  <Navbar @toggle-sidebar="toggleSidebar" :is-sidebar-expanded="isSidebarExpanded" />
   <div class="container">
     <Sidebar :is-expanded="isSidebarExpanded" ref="sidebarRef" @close-sidebar="isSidebarExpanded = false" />
     <main
@@ -130,7 +130,12 @@ watch(isSidebarExpanded, (newValue) => {
   </div>
 
   <Console :is-visible="isConsoleVisible" @toggle-visibility="toggleConsole" ref="consoleRef" />
-  <button id="toggle-console" @click="toggleConsole">
+  <button
+    id="toggle-console"
+    @click="toggleConsole"
+    :aria-expanded="isConsoleVisible.toString()"
+    aria-controls="console-region"
+  >
     {{ isConsoleVisible ? 'Ocultar Consola' : 'Mostrar Consola' }}
   </button>
 
@@ -145,8 +150,8 @@ watch(isSidebarExpanded, (newValue) => {
 .container {
    /* Asegura que el contenedor principal ocupe todo el alto disponible */
   display: flex; /* Usar flexbox en lugar de grid para el layout principal */
-  gap: 20px;
-  padding: 20px;
+  gap: 1.5rem; /* Updated gap */
+  padding: 1.5rem; /* Updated padding */
   /* Eliminado: height: calc(100vh - 72px); para permitir que el contenido empuje el footer */
   /* No se necesita transition para grid-template-columns aquí */
 }
@@ -158,8 +163,8 @@ watch(isSidebarExpanded, (newValue) => {
 @media (max-width: 768px) {
   .container {
     flex-direction: column; /* Apilar en móvil */
-    gap: 10px;
-    padding: 10px;
+    gap: 1rem; /* Updated gap for mobile */
+    padding: 1rem; /* Updated padding for mobile */
   }
 }
 
@@ -169,17 +174,20 @@ watch(isSidebarExpanded, (newValue) => {
   bottom: 20px;
   right: 20px;
   z-index: 1001;
-  padding: 8px 16px;
-  background-color: #005f99;
-  color: white;
+  padding: 12px 18px; /* Updated padding */
+  background-color: var(--evolved-clarity-primary); /* Use new primary color */
+  color: var(--neutral-light-bg); /* Use new light background for text */
   border: none;
-  border-radius: 4px;
+  border-radius: 6px; /* Updated border-radius */
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out; /* Updated transition */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added box-shadow */
+  font-size: 0.9rem; /* Adjusted font size */
 }
 
 #toggle-console:hover {
-  background-color: #007acc;
+  background-color: #0056b3; /* Darker shade of --evolved-clarity-primary (#0069D9) */
+  transform: translateY(-1px); /* Added subtle lift */
 }
 
 </style>

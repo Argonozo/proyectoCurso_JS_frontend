@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router';
 
+const props = defineProps({
+  isSidebarExpanded: Boolean
+});
+
 const router = useRouter();
 
 const navigateToHome = () => {
@@ -19,7 +23,14 @@ const toggleSidebar = () => {
   <header class="navbar">
     
     <div class="logo">
-      <button id="toggle-sidebar-button" @click="toggleSidebar" class="hamburger-menu">
+      <button
+        id="toggle-sidebar-button"
+        @click="toggleSidebar"
+        class="hamburger-menu"
+        :aria-expanded="props.isSidebarExpanded.toString()"
+        aria-controls="sidebar-nav"
+        aria-label="Toggle navigation menu"
+      >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <line x1="3" y1="12" x2="21" y2="12"></line>
           <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -41,28 +52,25 @@ const toggleSidebar = () => {
 </template>
 
 <style scoped>
-/* Ajustes específicos manteniendo la transparencia */
 .navbar {
-  opacity: 0.9; /* Opacidad para un efecto de transparencia */
-  backdrop-filter: blur(10px); /* Efecto de desenfoque para el fondo */
- 
-  background: linear-gradient(to right,#1a1a1a, #004a7c, #1a1a1a); /* Gradiente de azul oscuro a un color oscuro para fusionarse con el sidebar */
-  color: rgb(255, 255, 255);
+  background: var(--evolved-clarity-primary); /* New background color */
+  color: var(--neutral-light-bg); /* New text color */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 72px; /* Altura fija del navbar */
-  padding: 0 1rem;
+  height: 72px;
+  padding: 0 1.5rem; /* Updated padding */
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Added box-shadow */
 }
 
 .navbar .logo {
   height: 100%;
   display: flex;
   align-items: center;
-  padding:  0; /* Espacio interno vertical */
+  padding:  0;
 }
 
 .navbar .logo img {
@@ -71,79 +79,74 @@ const toggleSidebar = () => {
   object-fit: contain;
 }
 
-/* --- EFECTO AL TÍTULO DEL NAVBAR --- */
 .navbar .title {
-  font-weight: 900;
-  font-size: 2.1rem;
-  background:linear-gradient(to right,#1a1a1a,white, #004a7c, #4b3d3d,yellow);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-  text-shadow: 0 2px 12px #0008, 0 1px 0 #fff2;
-  animation: gradient-move 4s linear infinite;
-  letter-spacing: -1px;
-}
-
-@keyframes gradient-move {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
+  font-family: var(--font-family-heading); /* Explicitly set font family */
+  font-weight: 900; /* Retain existing weight or adjust as per new guidelines */
+  font-size: 2rem; /* Adjusted font size */
+  color: var(--neutral-light-bg); /* Solid text color */
+  letter-spacing: normal; /* Adjusted letter spacing */
+  /* Removed gradient, animation, and text-shadow properties */
 }
 
 .navbar-links {
   display: flex;
   gap: 1rem;
-  align-items: center; /* Alinea los elementos verticalmente */
+  align-items: center;
 }
 
 .hamburger-menu {
   background: none;
   border: none;
-  color: white;
+  color: var(--neutral-light-bg); /* Updated color */
   cursor: pointer;
   padding: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 6px; /* Added border-radius */
+  transition: background-color 0.2s ease-in-out; /* Updated transition */
+}
+
+.hamburger-menu:hover,
+.hamburger-menu:focus {
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle hover/focus feedback */
 }
 
 .hamburger-menu svg {
   width: 24px;
   height: 24px;
+  /* stroke="currentColor" is in the template, stroke-width="2" is kept */
 }
 
 .navbar-links a {
-  color: white; /* Color del texto blanco */
-  text-decoration: none; /* Quitar subrayado */
-  font-size: 1.1rem; /* Tamaño de fuente ligeramente más grande */
-  padding: 0.5rem 1rem; /* Espaciado interno para hacerlos más clicables */
-  border-radius: 5px; /* Bordes ligeramente redondeados */
-  transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave para efectos */
+  font-family: var(--font-family-body); /* Use body font for nav links */
+  font-weight: 700; /* Bolder weight for nav links */
+  color: var(--neutral-light-bg); /* Updated text color */
+  text-decoration: none;
+  font-size: 1rem; /* Adjusted font size */
+  padding: 0.5rem 1rem;
+  border-radius: 6px; /* Updated border-radius */
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; /* Updated transition */
 }
 
 .navbar-links a:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Fondo semitransparente al pasar el ratón */
-  color: #e0e0e0; /* Color de texto ligeramente más claro al pasar el ratón */
-  text-decoration: underline; /* Subrayado al pasar el ratón */
+  background-color: rgba(255, 255, 255, 0.1); /* Subtle hover background */
+  color: var(--neutral-light-bg); /* Keep text color or slightly adjust if needed */
+  /* text-decoration: underline; Removed */
 }
 
 /* Media queries para responsividad */
 /* Tablet Styles */
 @media (max-width: 1023px) and (min-width: 769px) {
   .navbar .title {
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Kept relative, seems fine */
   }
 }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
   .navbar {
-    padding: 0.5rem;
+    padding: 0 0.75rem; /* Adjusted padding for mobile */
   }
 
   .navbar .logo {
@@ -151,14 +154,14 @@ const toggleSidebar = () => {
   }
 
   .navbar .title {
-    font-size: 1.5rem; /* Reduced font size */
-    /* Consider adjusting letter-spacing if needed */
+    font-size: 1.5rem; /* Kept relative, seems fine */
   }
 }
 
 @media (max-width: 400px) {
   .navbar .title {
-    font-size: 1.2rem; /* Further Reduced font size */
+    font-size: 1.2rem; /* Kept relative, seems fine */
   }
 }
+</style>
 </style>
